@@ -112,6 +112,24 @@ footer {
     padding: 1rem;
 }
 
+footer p {
+    margin: 0; /* Remove default margin for paragraphs */
+    font-size: 14px; /* Adjust font size */
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px; /* Add margin between links */
+    font-size: 14px; /* Adjust font size */
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
 .blog-post {
     position: relative;
 }
