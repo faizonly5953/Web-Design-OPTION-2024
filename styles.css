@@ -77,14 +77,32 @@ h2 {
     border-radius: 8px;
 }
 
-.project-item a,
-.blog-post a {
+.project-item a{
     display: inline-block;
     background-color: #333;
     color: white;
     padding: 8px 15px;
     text-decoration: none;
     border-radius: 5px;
+    transition: transform 250ms ease-in; 
+}
+
+.project-item a:hover{
+    display: inline-block;
+    background-color: #ffffff;
+    color: #333;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    outline: #333 solid 1px;
+    transform: scale(1.05);
+    transition: transform 250ms ease-in; 
+}
+
+.blog-post h3
+.blog-post section{
+    width: auto;
+    height: 30%;
 }
 
 footer {
@@ -96,13 +114,4 @@ footer {
 
 .blog-post {
     position: relative;
-}
-
-.read-more-content {
-    display: none;
-    padding-top: 10px;
-}
-
-.blog-post input:checked + .read-more-content {
-    display: block;
 }
