@@ -77,7 +77,7 @@ h2 {
     border-radius: 8px;
 }
 
-.project-item a{
+.project-item a {
     display: inline-block;
     background-color: #333;
     color: white;
@@ -86,6 +86,17 @@ h2 {
     border-radius: 5px;
     transition: transform 250ms ease-in; 
 }
+
+@media only screen and (max-width: 600px) {
+    .project-item a {
+        margin-bottom: 10px;
+    }
+
+    .project-item a:last-child {
+        margin-bottom: 0;
+    }
+}
+
 
 .project-item a:hover{
     display: inline-block;
@@ -113,15 +124,15 @@ footer {
 }
 
 footer p {
-    margin: 0; /* Remove default margin for paragraphs */
-    font-size: 14px; /* Adjust font size */
+    margin: 0;
+    font-size: 14px;
 }
 
 footer a {
     color: white;
     text-decoration: none;
-    margin: 0 10px; /* Add margin between links */
-    font-size: 14px; /* Adjust font size */
+    margin: 0 10px;
+    font-size: 14px;
 }
 
 footer a:hover {
