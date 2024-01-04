@@ -45,6 +45,16 @@ section {
     margin: 0 auto;
 }
 
+.about-content p a {
+    font-family: inherit;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.about-content p a:hover {
+    text-decoration: underline;
+}
+
 h2 {
     color: #333;
 }
