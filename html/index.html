@@ -1,82 +1,509 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Option - Official Practice Technology Information and Communication</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #cfcfcf;
+            overflow-x: hidden;
         }
+
         header {
-            background-color: #333;
-            color: #fff;
+
+            color: #ffffff;
             padding: 20px;
             text-align: center;
+            width: 100%;
+            height: 100vh;
+            background: rgb(2, 0, 36);
+            background-image: linear-gradient(to bottom, #222241, #2a2a58, #323370, #3a3b89, #4344a3, #5552b0, #6660bd, #766eca, #8e86cc, #a59ece, #bab6cf, #cfcfcf);
         }
+
+        header p {
+            text-align: center;
+            top: 50px;
+            position: relative;
+            font-family: monospace;
+            font-size: 20px;
+        }
+
         h1 {
             margin-top: 0;
+            font-family: "Anta", sans-serif;
+            font-weight: 100;
+            font-size: 100px;
+            top: 80px;
+            position: relative;
+
         }
+
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 1100px;
+            margin: 40px auto;
             padding: 20px;
             background-color: #fff;
-            border-radius: 5px;
+            border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
         }
+
         .material {
-            margin-bottom: 10px;
-            padding: 10px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            font-family: Poppins;
         }
+
         .material h2 {
             margin-top: 0;
         }
+
         .material p {
             margin-bottom: 0;
         }
-        a {
-            color: #008669;
+
+        .material a {
+            color: #1B1A55;
             text-decoration: none;
             font-weight: bold;
+            position: relative;
+            transition: all 300ms ease-in-out;
+            transform-origin: center;
         }
-        a:hover {
-            color: rgb(0, 47, 148);
-            text-decoration: underline;
-            font-weight: bold   ;
+
+        .material a:after {
+            content: "";
+            position: absolute;
+            background-color: #9290C3;
+            height: 3px;
+            width: 0;
+            left: 0;
+            bottom: -5px;
+            transition: 0.5s;
+            border-radius: 10px;
+            transform-origin: center;
+            left: 50%;
+        }
+
+        .material a:hover {
+            color: #535c91;
+            transition: 0.5s;
+            transform-origin: center;
+        }
+
+        .material a:hover:after {
+            width: 100%;
+            transform-origin: center;
+            left: 0;
+        }
+
+        footer {
+            background-color: #333;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            margin: 0;
+            position: relative;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        span {
+            font-family: Poppins;
+            color: rgb(110, 110, 110);
+        }
+
+        .arrow {
+            border: solid rgb(39, 39, 39);
+            border-width: 0 5px 5px 0;
+       
+            display: inline-block;
+            padding: 15px;
+            position: relative;
+            top: 60px;
+            text-align: center;
+            
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transition: all 100ms ease-in-out;
+        }
+
+        .down:hover {
+            padding: 16px;
+        }
+
+
+
+        /* Media responsif !important: do not break unless understood!*/
+        @media only screen and (max-width: 800px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            header {
+                width: 90.7%;
+                height: 100vh;
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 50px;
+                text-align: center;
+                top: 300px;
+            }
+
+            header p {
+                visibility: hidden;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .material {
+                padding: 15px;
+            }
+
+            .arrow {
+                padding: 10px;
+            }
+
+            .down {
+                top: 600px;
+
+            }
+
+            footer {
+                width: 100%;
+            }
+
+
+
+
+            /*Child media responsive common size Iphone 14*/
+            @media (min-width: 430px) {
+
+                footer {
+                    width: 103%;
+                }
+
+                header {
+                    width: 90.7%;
+                    height: 100vh;
+                    width: 94%;
+                }
+
+                .container {
+                    padding: 10px;
+                    width: 98%;
+                }
+
+                .down:hover {
+                    padding: 10.5px;
+                }
+
+                .material {
+                    width: 89%;
+                }
+
+            }
+
+            /*Child media responsive common size Iphone 14*/
+            @media (min-width: 390px) {
+
+                footer {
+                    width: 103%;
+                }
+                h1{
+                    top: 200px;
+                }
+
+                .container {
+                    padding: 10px;
+                    width: 98%;
+                }
+
+                .down:hover {
+                    padding: 10.5px;
+                }
+
+                header {
+                    width: 90.7%;
+                    height: 100vh;
+                    width: 94%;
+                }
+
+                header p {
+                    font-size: 16px;
+                    top: 200px;
+                    text-align: center;
+                    width: 300px;
+                    left: 30px;
+                }
+
+                .arrow {
+                    padding: 10px;
+                }
+
+                .down {
+                    top: 400px;
+
+                }
+
+                .material {
+                    width: 89%;
+                }
+            }
+
+            @media (min-width: 430px) {
+
+                footer {
+                    width: 103%;
+                }
+
+                .container {
+                    padding: 10px;
+                    width: 98%;
+                }
+
+                .down:hover {
+                    padding: 10.5px;
+                }
+
+                header {
+                    width: 90.7%;
+                    height: 100vh;
+                    width: 94%;
+                }
+
+                h1 {
+                    top: 240px;
+                    right: 5px;
+                }
+
+                header p {
+                    font-size: 16px;
+                    top: 240px;
+                    text-align: center;
+                    width: 300px;
+                    left: 30px;
+                }
+
+                .arrow {
+                    padding: 10px;
+                }
+
+                .down {
+                    top: 300px;
+
+                }
+
+                .material {
+                    width: 92.5%;
+                }
+
+
+                .container {
+                    padding: 10px;
+                    width: 95%;
+                }
+            }
+
+            @media (min-width: 375px) {
+
+                footer {
+                    width: 103%;
+                }
+
+                .container {
+                    padding: 10px;
+                    width: 98%;
+                }
+
+                .down:hover {
+                    padding: 10.5px;
+                }
+
+                header {
+                    width: 90.7%;
+                    height: 100vh;
+                    width: 94%;
+                }
+
+                h1 {
+                    top: 180px;
+                    right: 5px;
+                }
+
+                header p {
+                    font-size: 16px;
+                    top: 170px;
+                    text-align: center;
+                    width: 300px;
+                    left: 60px;
+                }
+
+                .arrow {
+                    padding: 10px;
+                }
+
+                .down {
+                    top: 300px;
+
+                }
+
+                .material {
+                    width: 91.5%;
+                }
+
+
+                .container {
+                    padding: 10px;
+                    width: 95%;
+                }
+            }
+            @media (min-width: 347px) {
+
+                footer {
+                    width: 100%;
+                }
+
+                .container {
+                    padding: 10px;
+                    width: 98%;
+                }
+
+                .down:hover {
+                    padding: 10.5px;
+                }
+
+                header {
+                    width: 90.7%;
+                    height: 100vh;
+                    width: 94%;
+                }
+
+                h1 {
+                    top: 180px;
+                    left: 5px;
+                }
+
+                header p {
+                    font-size: 16px;
+                    top: 170px;
+                    text-align: center;
+                    width: 300px;
+                    left: 30px;
+                }
+
+                .arrow {
+                    padding: 10px;
+                }
+
+                .down {
+                    top: 300px;
+
+                }
+
+                .material {
+                    width: 91.5%;
+                }
+
+
+                .container {
+                    padding: 10px;
+                    width: 95%;
+                }
+                
+
+            }
         }
     </style>
 </head>
+
 <body>
+
     <header>
         <h1>Welcome to Option Programming</h1>
-        <p>Official Practice Technology Information and Communication</p>
+        <p>Official Practice Of Technology Information</p>
+
+        <a href="#intro"><i class="arrow down"></i></a>
+
     </header>
-    <div class="container">
+    <div id="intro" class="container">
         <div class="material">
             <h2>Intro To JavaScript</h2>
             <p><strong>Pertemuan Ke-1</strong></p>
             <p>Membahas Pengertian Javascript, Console.log, Dan Tipe Tipe Variabel</p>
-            <a href="downloads\Pertemuan Ke 1.pdf" download>Download Materi</a>
+          <a href="downloads\Pertemuan Ke 1.pdf" download><i class="fa fa-file-text"></i> Download Materi</a>
         </div>
         <div class="material">
             <h2>Tipe Data In JavaScript</h2>
             <p><strong>Pertemuan Ke-2</strong></p>
             <p>Membahas Macam Macam Tipe Data, String, Boolean, Number, Null, BigINT, Undefined</p>
-            <a href="downloads\Pertemuan Ke 2.pdf" download>Download Materi</a>
-        </div>
+            <a href="downloads\Pertemuan Ke 2.pdf" download><i class="fa fa-file-text"></i> Download Materi</a>
+            </div>
         <div class="material">
             <h2>Operations & If-Else Statement</h2>
             <p><strong>Pertemuan Ke-3 & 4</strong></p>
-            <p>Membahas penggunaan struktur kontrol `switch-case` dan `if-else` JavaScript, serta `Operations` JavaScript</p>
-            <a href="downloads\Pertemuan Le 3.pdf" download>Download Materi</a>
+            <p>Membahas penggunaan struktur kontrol `switch-case` dan `if-else` JavaScript, serta `Operations`
+                JavaScript</p>
+            <a href="downloads\Pertemuan Le 3.pdf" download><i class="fa fa-file-text"></i> Download Materi</a>
+        </div>
+        <div class="material">
+            <h2>Looping</h2>
+            <p><strong>Pertemuan Ke-5</strong></p>
+            <p>Membahas Macam Macam Looping, For, While, Do-While, For-Of, For-In Di JavaScript</p>
+            <a href="downloads\Pertemuan Ke 5.pdf" download><i class="fa fa-file-text"></i> Download Materi</a>
         </div>
         <!-- Add more materials as needed -->
     </div>
+
+    <footer>
+        <span>&copy; OPTION Programming Division 2023-2024</span>
+    </footer>
 </body>
+
 </html>
