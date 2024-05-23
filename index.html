@@ -143,6 +143,13 @@
         </a>
     </footer>
     <script>
+        /**
+            This code adds an event listener to the 'input' element. 
+            It listens for the 'keydown' event and checks if the key pressed is 'Enter'. 
+            If the 'Enter' key is pressed, it retrieves the value from the 'input' element, trims any leading or trailing whitespace, 
+            and passes it to the 'processCommand' function. 
+            Finally, it clears the value of the 'input' element.
+        */
         document.getElementById('input').addEventListener('keydown', function (event) {
             if (event.key === 'Enter') {
                 let input = document.getElementById('input').value.trim();
@@ -153,6 +160,10 @@
 
         let pendingDownload = null;
 
+        /**
+         * Processes the command entered by the user and performs the corresponding action.
+         * @param {string} command - The command entered by the user.
+         */
         function processCommand(command) {
             const output = document.getElementById('output');
             const prompt = document.querySelector('.prompt').textContent;
@@ -208,6 +219,10 @@
             output.scrollTop = output.scrollHeight;
         }
 
+        /**
+         * Handles the option command.
+         * @param {string} command - The command to be executed.
+         */
         function handleOptionCommand(command) {
             const output = document.getElementById('output');
             const subcommand = command.split(' ')[1];
@@ -238,6 +253,10 @@
             }
         }
 
+        /**
+         * Handles the response from a download prompt.
+         * @param {string} response - The user's response (either 'Y' or 'N').
+         */
         function handleDownloadResponse(response) {
             const output = document.getElementById('output');
             if (response.toLowerCase() === 'y') {
@@ -254,6 +273,17 @@
             }
         }
 
+        /**
+            This code defines a JavaScript function called downloadPDF, which is used to download PDF files from a specified list of file locations.
+
+            The fileLocations object contains a mapping of file names to their corresponding download paths.
+
+            The downloadPDF function takes a fileName parameter and checks if the file name exists in the fileLocations object. If it does, it creates a link element with the appropriate href and download attributes, and triggers a click event on the link to initiate the download. If the file name is not found in the fileLocations object, an error message is logged to the console along with a list of available file names.
+
+            Example usage:
+            downloadPDF('pertemuan_1.pdf');
+        */
+
         const fileLocations = {
             'pertemuan_1.pdf': 'html/downloads/pertemuan_1.pdf',
             'pertemuan_2.pdf': 'html/downloads/pertemuan_2.pdf',
@@ -263,20 +293,24 @@
             'pertemuan_7.pdf': 'html/downloads/pertemuan_7.pdf'
         };
 
+        /**
+         * Downloads a PDF file from the specified file name.
+         * @param {string} fileName - The name of the file to download.
+         */
         function downloadPDF(fileName) {
-            // Periksa apakah nama file ada dalam daftar lokasi file
+            // Check if the file name exists in the fileLocations object
             if (fileLocations.hasOwnProperty(fileName)) {
-                // Buat elemen link
+                // Create a link element
                 const link = document.createElement('a');
-                // Set atribut href dan download
+                // Set href and download attributes
                 link.setAttribute('href', fileLocations[fileName]);
                 link.setAttribute('download', fileName);
-                // Klik link secara otomatis untuk memulai unduhan
+                // Automatically click the link to start the download
                 link.click();
-                console.log("Download berhasil dimulai.");
+                console.log("Download started successfully.");
             } else {
-                console.error("File tidak ditemukan:", fileName);
-                console.error("Daftar file yang tersedia:", Object.keys(fileLocations).join(", "));
+                console.error("File not found:", fileName);
+                console.error("Available files:", Object.keys(fileLocations).join(", "));
             }
         }
     </script>
