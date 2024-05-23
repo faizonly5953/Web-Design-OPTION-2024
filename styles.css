@@ -1,3 +1,5 @@
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -153,4 +155,47 @@ footer a:hover {
 
 .blog-post {
     position: relative;
+}
+
+#cli {
+    background-color: #333;
+    color: #00ff00;
+    padding: 20px;
+    font-family: "Inconsolata", monospace;
+    width: 97%;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    align-items: center;
+}
+
+.terminal {
+    background-color: #000000;
+    padding: 20px;
+    width: 700px;
+    height: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    position: relative;
+    margin: 0 auto; /* Add this line to center the element horizontally */
+}
+
+.input-line {
+    display: flex;
+}
+
+.prompt {
+    margin-right: 10px;
+}
+
+#input {
+    background: none;
+    border: none;
+    color: #00ff00;
+    outline: none;
+    flex-grow: 1;
+}
+
+#output {
+    white-space: pre-wrap;
 }
