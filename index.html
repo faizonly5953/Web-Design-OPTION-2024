@@ -21,7 +21,7 @@
                 <li><a class="smooth-scroll" href="#about">About</a></li>
                 <li><a class="smooth-scroll" href="#projects">Projects</a></li>
                 <li><a class="smooth-scroll" href="#blog">Option</a></li>
-                <li><a class="smooth-scroll" href="#cli">CLI</a></li>
+                <li><a class="smooth-scroll" href="cli.html">CLI</a></li>
             </ul>
         </nav>
     </header>
@@ -111,19 +111,6 @@
         </div>
     </section>
 
-    <section id="cli">
-        <div class="terminal">
-            <div id="start">Command Line Interface [Version 1.0]<br>
-                (c) Faizonly5953. All rights reserved.</div>
-            <br>
-            <div id="output"></div>
-            <div class="input-line">
-                <span class="prompt">127.0.0.1\guest\cli_command></span>
-                <input type="text" id="input" autofocus>
-            </div>
-        </div>
-    </section>
-
     <footer id="contact">
         <p>&copy; 2024 Faiz Bagus Pradana. All rights reserved.</p>
         <p>I'm here:</p>
@@ -142,178 +129,6 @@
             </svg>
         </a>
     </footer>
-    <script>
-        /**
-            This code adds an event listener to the 'input' element. 
-            It listens for the 'keydown' event and checks if the key pressed is 'Enter'. 
-            If the 'Enter' key is pressed, it retrieves the value from the 'input' element, trims any leading or trailing whitespace, 
-            and passes it to the 'processCommand' function. 
-            Finally, it clears the value of the 'input' element.
-        */
-        document.getElementById('input').addEventListener('keydown', function (event) {
-            if (event.key === 'Enter') {
-                let input = document.getElementById('input').value.trim();
-                processCommand(input);
-                document.getElementById('input').value = '';
-            }
-        });
-
-        let pendingDownload = null;
-
-        /**
-         * Processes the command entered by the user and performs the corresponding action.
-         * @param {string} command - The command entered by the user.
-         */
-        function processCommand(command) {
-            const output = document.getElementById('output');
-            const prompt = document.querySelector('.prompt').textContent;
-            output.innerHTML += `${prompt} ${command}\n`;
-            output.scrollTop = output.scrollHeight;
-
-            if (pendingDownload) {
-                handleDownloadResponse(command);
-            } else {
-                switch (command.toLowerCase()) {
-                    case 'whoami':
-                        output.innerHTML += 'Nama: Faiz Bagus Pradana\n';
-                        output.innerHTML += 'Sekolah: SMAN 10 Bekasi\n';
-                        output.innerHTML += 'Kelas: 10\n';
-                        output.innerHTML += 'Hobi: Pemrograman\n';
-                        break;
-                    case 'clear':
-                        output.innerHTML = '';
-                        break;
-                    case 'help':
-                        output.innerHTML += 'Available commands:\n';
-                        output.innerHTML += ' - whoami: Show biodata\n';
-                        output.innerHTML += ' - clear: Clear the terminal\n';
-                        output.innerHTML += ' - help: Show this help message\n';
-                        output.innerHTML += ' - date: Show current date and time\n';
-                        output.innerHTML += ' - version: Show CLI version\n';
-                        output.innerHTML += ' - contact: How To Call Me\n';
-                        output.innerHTML += ' - option: Show OPTION commands\n';
-                        break;
-                    case 'version':
-                        output.innerHTML += 'CLI Version 1.0\n';
-                        output.innerHTML += 'Build Date 2024.05.23\n';
-                        output.innerHTML += 'Developed by Faizonly5953, Sama ChatGPT Bjirr\n';
-                        output.innerHTML += 'Support & Bugs? : @faizbp._\n';
-                        break;
-                    case 'contact':
-                        output.innerHTML += 'Instagram: @faizbp._\n';
-                        output.innerHTML += 'Github: @faizonly5953\n';
-                        break;
-                    case 'date':
-                        output.innerHTML += new Date().toLocaleString('en-US', { hour12: false }) + '\n';
-                        break;
-                    default:
-                        if (command.startsWith('option')) {
-                            handleOptionCommand(command);
-                        } else {
-                            output.innerHTML += `Command not found: ${command}\n Try 'help'\n`;
-                        }
-                        break;
-                }
-            }
-
-            output.scrollTop = output.scrollHeight;
-        }
-
-        /**
-         * Handles the option command.
-         * @param {string} command - The command to be executed.
-         */
-        function handleOptionCommand(command) {
-            const output = document.getElementById('output');
-            const subcommand = command.split(' ')[1];
-
-            const descriptions = {
-                'pertemuan_1': 'Deskripsi pertemuan 1: Intro To JavaScript.',
-                'pertemuan_2': 'Deskripsi pertemuan 2: Tipe Data In JavaScript.',
-                'pertemuan_3_4': 'Deskripsi pertemuan 3 Dan 4: Operations & If-Else Statement',
-                'pertemuan_5': 'Deskripsi pertemuan 5: Looping.',
-                'pertemuan_6': 'Deskripsi pertemuan 6: Array & Object.',
-                'pertemuan_7': 'Deskripsi pertemuan 7: Function',
-            };
-
-            if (subcommand === 'help') {
-                output.innerHTML += 'OPTION subcommands:\n';
-                output.innerHTML += ' - option pertemuan_1: Deskripsi dan download materi pertemuan 1\n';
-                output.innerHTML += ' - option pertemuan_2: Deskripsi dan download materi pertemuan 2\n';
-                output.innerHTML += ' - option pertemuan_3_4: Deskripsi dan download materi pertemuan 3 dan 4\n';
-                output.innerHTML += ' - option pertemuan_5: Deskripsi dan download materi pertemuan 5\n';
-                output.innerHTML += ' - option pertemuan_6: Deskripsi dan download materi pertemuan 6\n';
-                output.innerHTML += ' - option pertemuan_7: Deskripsi dan download materi pertemuan 7\n';
-                output.innerHTML += ' - option help: Menampilkan bantuan untuk subperintah OPTION\n';
-            } else if (descriptions[subcommand]) {
-                output.innerHTML += `${descriptions[subcommand]}\nIngin mendownload file? (Y/N)\n`;
-                pendingDownload = subcommand + '.pdf';
-            } else {
-                output.innerHTML += `Subcommand not found: ${subcommand}\n Try 'option help'\n`;
-            }
-        }
-
-        /**
-         * Handles the response from a download prompt.
-         * @param {string} response - The user's response (either 'Y' or 'N').
-         */
-        function handleDownloadResponse(response) {
-            const output = document.getElementById('output');
-            if (response.toLowerCase() === 'y') {
-                output.innerHTML += 'Downloading...\n';
-                setTimeout(() => {
-                    downloadPDF(pendingDownload);
-                    pendingDownload = null;
-                }, 2000); // Simulate download delay
-            } else if (response.toLowerCase() === 'n') {
-                output.innerHTML += 'Download canceled.\n';
-                pendingDownload = null;
-            } else {
-                output.innerHTML += 'Unknown answer. Please type "Y" or "N".\n';
-            }
-        }
-
-        /**
-            This code defines a JavaScript function called downloadPDF, which is used to download PDF files from a specified list of file locations.
-
-            The fileLocations object contains a mapping of file names to their corresponding download paths.
-
-            The downloadPDF function takes a fileName parameter and checks if the file name exists in the fileLocations object. If it does, it creates a link element with the appropriate href and download attributes, and triggers a click event on the link to initiate the download. If the file name is not found in the fileLocations object, an error message is logged to the console along with a list of available file names.
-
-            Example usage:
-            downloadPDF('pertemuan_1.pdf');
-        */
-
-        const fileLocations = {
-            'pertemuan_1.pdf': 'html/downloads/pertemuan_1.pdf',
-            'pertemuan_2.pdf': 'html/downloads/pertemuan_2.pdf',
-            'pertemuan_3_4.pdf': 'html/downloads/pertemuan_3_4.pdf',
-            'pertemuan_5.pdf': 'html/downloads/pertemuan_5.pdf',
-            'pertemuan_6.pdf': 'html/downloads/pertemuan_6.pdf',
-            'pertemuan_7.pdf': 'html/downloads/pertemuan_7.pdf'
-        };
-
-        /**
-         * Downloads a PDF file from the specified file name.
-         * @param {string} fileName - The name of the file to download.
-         */
-        function downloadPDF(fileName) {
-            // Check if the file name exists in the fileLocations object
-            if (fileLocations.hasOwnProperty(fileName)) {
-                // Create a link element
-                const link = document.createElement('a');
-                // Set href and download attributes
-                link.setAttribute('href', fileLocations[fileName]);
-                link.setAttribute('download', fileName);
-                // Automatically click the link to start the download
-                link.click();
-                console.log("Download started successfully.");
-            } else {
-                console.error("File not found:", fileName);
-                console.error("Available files:", Object.keys(fileLocations).join(", "));
-            }
-        }
-    </script>
 </body>
 
 </html>
