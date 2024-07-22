@@ -108,7 +108,7 @@
                         output.innerHTML += 'Nama: Faiz Bagus Pradana\n';
                         output.innerHTML += 'Sekolah: SMAN 10 Bekasi\n';
                         output.innerHTML += 'Kelas: 10\n';
-                        output.innerHTML += 'Hobi: Pemrograman\n';
+                        output.innerHTML += 'Hobi: Problem Solving\n';
                         break;
                     case 'clear':
                         output.innerHTML = '';
@@ -127,10 +127,19 @@
                         output.innerHTML += new Date().toLocaleString('en-US', { hour12: false }) + '\n';
                         break;
                     case 'version':
-                        output.innerHTML += 'CLI Version 1.1\n';
-                        output.innerHTML += 'Build Version: 2024.05.25\n';
+                        output.innerHTML += 'CLI Version 1.2\n';
+                        output.innerHTML += 'Build Version: 2024.07.22\n';
                         output.innerHTML += 'Developed by Faizonly5953, ChatGPT, Copilot :)\n';
                         output.innerHTML += 'Support & Bugs? : @faizbp._';
+                        break;
+                    case 'lol':
+                        output.innerHTML += 'Haha, nice try! :)\n';
+                        break;
+                    case 'exit':
+                        output.innerHTML += 'Goodbye!\n';
+                        setTimeout(() => {
+                            window.close();
+                        }, 1000);
                         break;
                     default:
                         if (command.startsWith('option')) {
@@ -158,6 +167,7 @@
                 'AIWA': 'Deskripsi project 4: Anime Information Web App is a platform that provides comprehensive information about various anime titles.',
                 'RAIWA': 'Deskripsi project 5: Random Anime Web App is an offshoot that offers an engaging experience by providing random anime information.',
                 'GUDC': 'Deskripsi project 6: This web app allows users to fetch and display GitHub user data using the GitHub API.',
+                'Katanime': 'Deskripsi project 7: Katanime is a platform that displays random anime quotes.'
             };
 
             const hrefs = {
@@ -183,6 +193,10 @@
                 'GUDC': [
                     '<a href="https://github.com/faizonly5953/faizonly5953.github.io/blob/main/pageinfo/api.html" target="_blank">GitHub User Data Checker on GitHub</a>',
                     '<a href="https://faizonly5953.github.io/pageinfo/api.html" target="_blank">Live GUDC Site</a>'
+                ],
+                'Katanime': [
+                    '<a href="https://github.com/faizonly5953/faizonly5953.github.io/blob/main/pageinfo/animeq.html" target="_blank">Katanime on GitHub</a>',
+                    '<a href="https://faizonly5953.github.io/pageinfo/animeq.html" target="_blank">Live Katanime Site</a>'
                 ]
             };
 
@@ -194,6 +208,7 @@
                 output.innerHTML += ' - project AIWA: Deskripsi project 4\n';
                 output.innerHTML += ' - project RAIWA: Deskripsi project 5\n';
                 output.innerHTML += ' - project GUDC: Deskripsi project 6\n';
+                output.innerHTML += ' - project Katanime: Deskripsi project 7\n';
                 output.innerHTML += ' - project help: Menampilkan bantuan untuk subperintah PROJECT\n';
             } else if (descriptions[subcommand]) {
                 output.innerHTML += `${descriptions[subcommand]}\n`;
