@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio</title>
+    <title>My Comprehensive Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
@@ -20,9 +20,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Indie+Flower&family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Indie+Flower&family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --dark-green: #1a3a3a;
@@ -155,10 +157,12 @@
             padding: 20px 0;
             margin-top: 40px;
         }
+
         footer a {
             color: var(--accent-green);
             text-decoration: none;
         }
+
         footer p {
             margin: 5px 0;
             color: #ffffff50;
@@ -212,10 +216,23 @@
             align-items: center;
             color: white;
             text-align: center;
+            font-size: 22px;
         }
 
         nav ul span {
             text-align: start;
+        }
+
+        .svg-arrow {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3C!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3E%3Csvg fill='%23000000' height='800px' width='800px' version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 330 330' xml:space='preserve'%3E%3Cpath id='XMLID_225_' d='M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z'/%3E%3C/svg%3E") no-repeat;
+            background-size: contain;
+            animation: bounce 2s infinite;
         }
     </style>
 </head>
@@ -224,9 +241,6 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#abouthover">About Me</a></li>
-                <li><a href="#projectshover">My Projects</a></li>
-                <li><a href="#optionhover">JavaScript Fundamental</a></li>
                 <li><a href="cli.html">CLI</a></li>
             </ul>
         </nav>
@@ -236,23 +250,30 @@
         <section id="about">
             <div class="landing">
                 <h1 class="title1" data-aos="zoom-out">Welcome to My Portfolio</h1>
+                <p>Faiz Bagus Pradana</p>
+                <a href="#about-me">
+                    <div class="svg-arrow"></div>
+                </a>
             </div>
             <div class="about-me" data-aos="zoom-in">
                 <div>
-                    <section id="abouthover">
-                    <h2>About Me</h2>
-                    <p>Hi there! I'm <a href="https://github.com/faizonly5953">Faiz Bagus Pradana</a>, a passionate
-                        student chasing a dream at <a href="https://www.sman10bekasi.sch.id/">SMA NEGERI 10 KOTA
-                            BEKASI</a>
-                        Currently on a learning journey, I am eager to explore and contribute to the ever-evolving world
-                        of technology. Alongside my studies, I actively engage in hands-on projects and learning
-                        experiences. My primary interests revolve around AI, machine learning, Python, and
-                        cybersecurity.
-                        <br>
-                        <br>
-                        My goal is to become proficient in each of these fields and make a positive impact on the tech
-                        industry.
-                    </p>
+                    <section id="about-me">
+                        <h2>About Me</h2>
+                        <p>Hi there! I'm <a href="https://github.com/faizonly5953">Faiz Bagus Pradana</a>, a passionate
+                            student chasing a dream at <a href="https://www.sman10bekasi.sch.id/">SMA NEGERI 10 KOTA
+                                BEKASI</a>
+                            Currently on a learning journey, I am eager to explore and contribute to the ever-evolving
+                            world
+                            of technology. Alongside my studies, I actively engage in hands-on projects and learning
+                            experiences. My primary interests revolve around AI, machine learning, Python, and
+                            cybersecurity.
+                            <br>
+                            <br>
+                            My goal is to become proficient in each of these fields and make a positive impact on the
+                            tech
+                            industry.
+                        </p>
+                    </section>
                 </div>
             </div>
         </section>
@@ -265,79 +286,91 @@
         <section id="projects" data-aos="slide-up">
             <h2>My Projects</h2>
             <section id="projectshover">
-            <div class="projects">
-                <div class="project-card">
-                    <h3>Diffusion Colab</h3>
-                    <p>This project "Diffusion Colab" is a practical guide on how to generate images using diffusion
-                        models. In this project, you'll find examples of various diffusion models along with prompts you
-                        can use to create unique images.</p>
-                    <a href="https://github.com/faizonly5953/Diffusion-Colab" target="_blank" class="btn">View
-                        Source</a>
+                <div class="projects">
+                    <div class="project-card">
+                        <h3>Diffusion Colab</h3>
+                        <p>This project "Diffusion Colab" is a practical guide on how to generate images using diffusion
+                            models. In this project, you'll find examples of various diffusion models along with prompts
+                            you
+                            can use to create unique images.</p>
+                        <a href="https://github.com/faizonly5953/Diffusion-Colab" target="_blank" class="btn">View
+                            Source</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Sortusepy</h3>
+                        <p>This project is a collection of Python implementations of various sorting algorithms. Each
+                            algorithm is designed to be interactive, allowing users to enter a list of numbers they want
+                            to
+                            sort and view the steps of the sorting process.</p>
+                        <a href="https://github.com/faizonly5953/Sortusepy" target="_blank" class="btn">View Source</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Github Website</h3>
+                        <p>This project entails the development of GitHub pages featuring my public information. These
+                            pages
+                            serve as a repository for details about my background, social media profiles, and projects
+                            created with HTML and CSS.</p>
+                        <a href="https://github.com/faizonly5953/faizonly5953.github.io" target="_blank"
+                            class="btn">View
+                            Source</a>
+                        <a href="https://faizonly5953.github.io/" target="_blank" class="btn">Live Site</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Anime Information WebApp</h3>
+                        <p>Anime Information Web App is a platform that provides comprehensive information about various
+                            anime titles. With a powerful search feature, users can easily navigate through a wide range
+                            of
+                            anime.</p>
+                        <a href="https://github.com/faizonly5953/faizonly5953.github.io/blob/main/pageinfo/anime.html"
+                            target="_blank" class="btn">View Source</a>
+                        <a href="https://faizonly5953.github.io/pageinfo/anime.html" target="_blank" class="btn">Live
+                            Site</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Random Anime Information WebApp</h3>
+                        <p>Random Anime Web App is an offshoot that offers an engaging experience by providing random
+                            anime
+                            information. Discover interesting titles you might have never encountered before!.</p>
+                        <a href="https://github.com/faizonly5953/faizonly5953.github.io/blob/main/pageinfo/random.html"
+                            target="_blank" class="btn">View Source</a>
+                        <a href="https://faizonly5953.github.io/pageinfo/anime.html" target="_blank" class="btn">Live
+                            Site</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Github User Data Checker</h3>
+                        <p>This web app allows users to fetch and display GitHub user data using the GitHub API. Users
+                            can
+                            input a GitHub username, and the app will provide information such as user ID, avatar,
+                            profile
+                            URL, and more.</p>
+                        <a href="https://github.com/faizonly5953/faizonly5953.github.io/blob/main/pageinfo/api.html"
+                            target="_blank" class="btn">View Source</a>
+                        <a href="https://faizonly5953.github.io/pageinfo/api.html" target="_blank" class="btn">Live
+                            Site</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Katanime</h3>
+                        <p>Katanime is a platform that displays random anime quotes. Users can explore a wide range of
+                            quotes from various anime titles and characters.</p>
+                        <a href="https://github.com/faizonly5953/faizonly5953.github.io/blob/main/pageinfo/animeq.html"
+                            target="_blank" class="btn">View Source</a>
+                        <a href="https://faizonly5953.github.io/pageinfo/animeq.html" target="_blank" class="btn">Live
+                            Site</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Sortusepy</h3>
-                    <p>This project is a collection of Python implementations of various sorting algorithms. Each
-                        algorithm is designed to be interactive, allowing users to enter a list of numbers they want to
-                        sort and view the steps of the sorting process.</p>
-                    <a href="https://github.com/faizonly5953/Sortusepy" target="_blank" class="btn">View Source</a>
-                </div>
-                <div class="project-card">
-                    <h3>Github Website</h3>
-                    <p>This project entails the development of GitHub pages featuring my public information. These pages
-                        serve as a repository for details about my background, social media profiles, and projects
-                        created with HTML and CSS.</p>
-                    <a href="https://github.com/faizonly5953/faizonly5953.github.io" target="_blank" class="btn">View
-                        Source</a>
-                    <a href="https://faizonly5953.github.io/" target="_blank" class="btn">Live Site</a>
-                </div>
-                <div class="project-card">
-                    <h3>Anime Information WebApp</h3>
-                    <p>Anime Information Web App is a platform that provides comprehensive information about various
-                        anime titles. With a powerful search feature, users can easily navigate through a wide range of
-                        anime.</p>
-                    <a href="https://github.com/faizonly5953/faizonly5953.github.io/blob/main/pageinfo/anime.html"
-                        target="_blank" class="btn">View Source</a>
-                    <a href="https://faizonly5953.github.io/pageinfo/anime.html" target="_blank" class="btn">Live
-                        Site</a>
-                </div>
-                <div class="project-card">
-                    <h3>Random Anime Information WebApp</h3>
-                    <p>Random Anime Web App is an offshoot that offers an engaging experience by providing random anime
-                        information. Discover interesting titles you might have never encountered before!.</p>
-                    <a href="https://github.com/faizonly5953/faizonly5953.github.io/blob/main/pageinfo/random.html"
-                        target="_blank" class="btn">View Source</a>
-                    <a href="https://faizonly5953.github.io/pageinfo/anime.html" target="_blank" class="btn">Live
-                        Site</a>
-                </div>
-                <div class="project-card">
-                    <h3>Github User Data Checker</h3>
-                    <p>This web app allows users to fetch and display GitHub user data using the GitHub API. Users can
-                        input a GitHub username, and the app will provide information such as user ID, avatar, profile
-                        URL, and more.</p>
-                    <a href="https://github.com/faizonly5953/faizonly5953.github.io/blob/main/pageinfo/api.html"
-                        target="_blank" class="btn">View Source</a>
-                    <a href="https://faizonly5953.github.io/pageinfo/api.html" target="_blank" class="btn">Live Site</a>
-                </div>
-                <div class="project-card">
-                    <h3>Katanime</h3>
-                    <p>Katanime is a platform that displays random anime quotes. Users can explore a wide range of
-                        quotes from various anime titles and characters.</p>
-                    <a href="https://github.com/faizonly5953/faizonly5953.github.io/blob/main/pageinfo/animeq.html"
-                        target="_blank" class="btn">View Source</a>
-                    <a href="https://faizonly5953.github.io/pageinfo/animeq.html" target="_blank" class="btn">Live
-                        Site</a>
-                </div>
-            </div>
-        </section>
-        <section id="option" data-aos="fade-down">
-            <section id="optionhover"></section>
-            <h2>JavaScript Fundamental</h2>
-            <div class="projects">
-                <div class="project-card">
-                    <h3>JS</h3>
-                    <p>JavaScript is a programming language used to create interactive and dynamic web pages. As one of the core technologies of the World Wide Web alongside HTML and CSS, JavaScript allows developers to control page elements, manipulate data, and communicate with servers. JavaScript fundamentals include an understanding of variables, data types, operators, control flow (such as if-else and loops), functions, and event handling.</p>
-                    <a href="\html\index.html" class="btn">View Material [ID]</a>
-        </section>
+            </section>
+            <section id="option" data-aos="fade-down">
+                <h2>JavaScript Fundamental</h2>
+                <div class="projects">
+                    <div class="project-card">
+                        <h3>JS</h3>
+                        <p>JavaScript is a programming language used to create interactive and dynamic web pages. As one
+                            of the core technologies of the World Wide Web alongside HTML and CSS, JavaScript allows
+                            developers to control page elements, manipulate data, and communicate with servers.
+                            JavaScript fundamentals include an understanding of variables, data types, operators,
+                            control flow (such as if-else and loops), functions, and event handling.</p>
+                        <a href="html\index.html" class="btn">View Material [ID]</a>
+            </section>
     </main>
 
     <footer>
