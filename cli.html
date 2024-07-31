@@ -68,7 +68,7 @@
 <body>
     <header><span id="rtext"></span></header>
     <div class="terminal">
-        <div id="start">Command Line Interface [Version 1.1]<br>
+        <div id="start">Command Line Interface [Version 1.2.1]<br>
             (C) Faizonly5953. All rights reserved.</div>
         <br>
         <div id="output"></div>
@@ -127,8 +127,8 @@
                         output.innerHTML += new Date().toLocaleString('en-US', { hour12: false }) + '\n';
                         break;
                     case 'version':
-                        output.innerHTML += 'CLI Version 1.2\n';
-                        output.innerHTML += 'Build Version: 2024.07.22\n';
+                        output.innerHTML += 'CLI Version 1.2.1\n';
+                        output.innerHTML += 'Build Version: 2024.07.31\n';
                         output.innerHTML += 'Developed by Faizonly5953, ChatGPT, Copilot :)\n';
                         output.innerHTML += 'Support & Bugs? : @faizbp._';
                         break;
@@ -167,7 +167,8 @@
                 'AIWA': 'Deskripsi project 4: Anime Information Web App is a platform that provides comprehensive information about various anime titles.',
                 'RAIWA': 'Deskripsi project 5: Random Anime Web App is an offshoot that offers an engaging experience by providing random anime information.',
                 'GUDC': 'Deskripsi project 6: This web app allows users to fetch and display GitHub user data using the GitHub API.',
-                'Katanime': 'Deskripsi project 7: Katanime is a platform that displays random anime quotes.'
+                'katanime': 'Deskripsi project 7: Katanime is a platform that displays random anime quotes.',
+                'convig' : 'Deskripsi project 8: Conversational AI with Voice Generation'
             };
 
             const hrefs = {
@@ -197,6 +198,9 @@
                 'Katanime': [
                     '<a href="https://github.com/faizonly5953/faizonly5953.github.io/blob/main/pageinfo/animeq.html" target="_blank">Katanime on GitHub</a>',
                     '<a href="https://faizonly5953.github.io/pageinfo/animeq.html" target="_blank">Live Katanime Site</a>'
+                ],
+                'convig': [
+                    '<a href="https://github.com/faizonly5953/chat-app-character-ai-playht" target="_blank">Convig on GitHub</a>',
                 ]
             };
 
@@ -209,6 +213,7 @@
                 output.innerHTML += ' - project RAIWA: Deskripsi project 5\n';
                 output.innerHTML += ' - project GUDC: Deskripsi project 6\n';
                 output.innerHTML += ' - project Katanime: Deskripsi project 7\n';
+                output.innerHTML += ' - project convig: Deskripsi Project 8\n';
                 output.innerHTML += ' - project help: Menampilkan bantuan untuk subperintah PROJECT\n';
             } else if (descriptions[subcommand]) {
                 output.innerHTML += `${descriptions[subcommand]}\n`;
