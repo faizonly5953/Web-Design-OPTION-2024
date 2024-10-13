@@ -20,9 +20,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Indie+Flower&family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Indie+Flower&family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --dark-green: #1a3a3a;
@@ -155,10 +157,12 @@
             padding: 20px 0;
             margin-top: 40px;
         }
+
         footer a {
             color: var(--accent-green);
             text-decoration: none;
         }
+
         footer p {
             margin: 5px 0;
             color: #ffffff50;
@@ -217,6 +221,46 @@
         nav ul span {
             text-align: start;
         }
+
+        .project-card.archived {
+            position: relative;
+            background-color: #1a2a2a;
+            /* Slightly darker background */
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .archived-label {
+            background-color: #333;
+            color: #ffff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            cursor: pointer;
+        }
+
+        .message-box {
+            display: none;
+            /* Initially hidden */
+            position: absolute;
+            top: 20px;
+            left: 0;
+            padding: 10px;
+            background-color: var(--dark-green);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            z-index: 10;
+            white-space: nowrap;
+        }
+
+        .project-card.archived:hover .message-box {
+            display: block;
+            /* Show message box when hovering over archived card */
+        }
     </style>
 </head>
 
@@ -224,6 +268,8 @@
     <header>
         <nav>
             <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="https://faizonly5953.netlify.app/cli">CLI</a></li>
             </ul>
         </nav>
@@ -269,16 +315,26 @@
                     <a href="https://github.com/faizonly5953/Diffusion-Colab" target="_blank" class="btn">View
                         Source</a>
                 </div>
-                <div class="project-card">
-                    <h3>ConViG</h3>
+                <div class="project-card archived">
+                    <div class="project-header">
+                        <span class="archived-label" id="archived-label">Archived</span>
+                        <!-- Message Box -->
+                        <div id="message-box" class="message-box hidden">
+                            This section is archived because it is no longer relevant.
+                        </div>
+                        <h3>ConViG</h3>
+                    </div>
+
                     <p>
                         Conversational AI with Voice Generation.
                         <br>
                         About
-                        This project is a chat application that integrates Character.ai's unofficial API for generating AI responses and PlayHT for converting those responses into audio files.
+                        This project is a chat application that integrates Character.ai's unofficial API for generating
+                        AI responses and PlayHT for converting those responses into audio files.
                     </p>
                     <a href="https://github.com/faizonly5953/chat-app-character-ai-playht" class="btn">View Source</a>
                 </div>
+
                 <div class="project-card">
                     <h3>Sortusepy</h3>
                     <p>This project is a collection of Python implementations of various sorting algorithms. Each
@@ -383,6 +439,24 @@
             setInterval(displayRandomQuote, 5000);
         });
     </script>
+
+<script>
+    // Selecting the archived label and message box
+    const archivedLabel = document.getElementById('archived-label');
+    const messageBox = document.getElementById('message-box');
+
+    // Event to show the message when mouse is over the label
+    archivedLabel.addEventListener('mouseover', () => {
+        messageBox.classList.remove('hidden');
+    });
+
+    // Event to hide the message when mouse leaves the label
+    archivedLabel.addEventListener('mouseout', () => {
+        messageBox.classList.add('hidden');
+    });
+</script>
+
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({
