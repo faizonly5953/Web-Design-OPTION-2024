@@ -169,6 +169,7 @@
                 'GUDC': 'Deskripsi project 6: This web app allows users to fetch and display GitHub user data using the GitHub API.',
                 'katanime': 'Deskripsi project 7: Katanime is a platform that displays random anime quotes.',
                 'convig' : 'Deskripsi project 8: Conversational AI with Voice Generation'
+                'chessbot' : 'Deskripsi project 9: ChessBot'
             };
 
             const hrefs = {
@@ -201,6 +202,9 @@
                 ],
                 'convig': [
                     '<a href="https://github.com/faizonly5953/chat-app-character-ai-playht" target="_blank">Convig on GitHub</a>',
+                ],
+                'chessbot' : [
+                    '<a href="https://github.com/faizonly5953/Chess-Bot" target"=_blank">Chessbot on Github</a>',
                 ]
             };
 
@@ -214,6 +218,7 @@
                 output.innerHTML += ' - project GUDC: Deskripsi project 6\n';
                 output.innerHTML += ' - project Katanime: Deskripsi project 7\n';
                 output.innerHTML += ' - project convig: Deskripsi Project 8\n';
+                output.innerHTML += ' - project Chessbot: Deskripsi Project 9\n';
                 output.innerHTML += ' - project help: Menampilkan bantuan untuk subperintah PROJECT\n';
             } else if (descriptions[subcommand]) {
                 output.innerHTML += `${descriptions[subcommand]}\n`;
